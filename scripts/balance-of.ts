@@ -3,6 +3,7 @@ import { encryptDataField, decryptNodeResponse } from '@swisstronik/utils'
 import { HardhatEthersProvider } from '@nomicfoundation/hardhat-ethers/internal/hardhat-ethers-provider'
 import { JsonRpcProvider } from 'ethers'
 import { HttpNetworkConfig } from 'hardhat/types'
+import deployedAddress from '../utils/deployed-address'
 
 const sendShieldedQuery = async (
   provider: HardhatEthersProvider | JsonRpcProvider,
@@ -22,7 +23,7 @@ const sendShieldedQuery = async (
 }
 
 async function main() {
-  const contractAddress = '0x37401D115bC52bBdaa59Df7f7e021523b020F98f'
+  const contractAddress = deployedAddress
   const [signer] = await ethers.getSigners()
 
   const contractFactory = await ethers.getContractFactory('TestToken')

@@ -2,6 +2,7 @@ import { ethers, network } from 'hardhat'
 import { encryptDataField } from '@swisstronik/utils'
 import { HardhatEthersSigner } from '@nomicfoundation/hardhat-ethers/src/signers'
 import { HttpNetworkConfig } from 'hardhat/types'
+import deployedAddress from '../utils/deployed-address'
 
 const sendShieldedTransaction = async (
   signer: HardhatEthersSigner,
@@ -22,7 +23,7 @@ const sendShieldedTransaction = async (
 }
 
 async function main() {
-  const contractAddress = '0x37401D115bC52bBdaa59Df7f7e021523b020F98f'
+  const contractAddress = deployedAddress
 
   const [signer] = await ethers.getSigners()
 
