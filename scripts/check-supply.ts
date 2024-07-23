@@ -36,7 +36,7 @@ async function main() {
   )
 
   const totalSupply = contract.interface.decodeFunctionResult(functionName, responseMessage)[0]
-  console.log('Total Supply is:', ethers.formatUnits(totalSupply, 18), 'IZZY')
+  console.log('Total Supply is:', ethers.formatUnits(totalSupply, 18))
 }
 
 main().catch((error) => {
